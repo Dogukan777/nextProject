@@ -1,16 +1,18 @@
+import { useRouter } from "next/navigation";
+
 
 
 interface CustomButtonProps {
   value?: string;
   onClick?: () => void;
 }
-const CustomButton: React.FC<CustomButtonProps> = ({ value = "Submit", onClick }) => {
+
+const LogInButton: React.FC<CustomButtonProps> = ({ value = "Submit", onClick }) => {
   return (
     <button
       onClick={onClick}
       style={{
-        marginTop: "15px",
-        backgroundColor: "green",
+        backgroundColor: "blue",
         padding: "10px 20px",
         borderRadius: "5px",
         color: "white",
@@ -23,4 +25,6 @@ const CustomButton: React.FC<CustomButtonProps> = ({ value = "Submit", onClick }
   );
 };
 
-export default CustomButton;
+  
+  export default LogInButton;
+  

@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     
     <div>
-     
+  
       {isLogin ? children : <Login setLogin={handleLogin} />}
     </div>
     

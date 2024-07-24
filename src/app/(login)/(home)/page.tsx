@@ -1,7 +1,7 @@
 "use client";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
 
+import { useState, useEffect } from "react";
+import Hider from "@/components/layout/hider";
 interface User {
   name: string;
   email: string;
@@ -23,6 +23,9 @@ const UserFetch = async (): Promise<User[]> => {
   return data;
 };
 
+const onBasketUpdate = async () =>{
+
+}
 export default function Home() {
   const [data, setData] = useState<User[] | null>(null);
   const [id, setId] = useState<string | null>(null);
@@ -50,6 +53,7 @@ export default function Home() {
 
   return (
     <main>
+           <Hider onBasketUpdate={onBasketUpdate}/>
       <div style={{width:"82%",height:"500px",margin:"0 auto",marginTop:"50px"}}>
       {data ? (
         data.map((item, index) => (

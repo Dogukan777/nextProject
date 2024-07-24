@@ -16,6 +16,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({ value = "Submit", onClick }
         color: "white",
         border: "none",
         cursor: "pointer",
+        float:"left"
       }}
     >
       {value}

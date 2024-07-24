@@ -19,7 +19,8 @@ const LoginFetch = async (email: string, password: string) => {
   });
 
   const data = await response.json();
-  console.log('data',data);
+
+  localStorage.setItem('userid', data.userid);
   return data;
 };
 
@@ -39,7 +40,7 @@ const Login = ({ setLogin }: { setLogin: () => void }) => {
     if (!password && lblPassword) {
       lblPassword.style.display = "block";
     }else if(lblPassword){
-      lblPassword.style.display = "none";
+      lblPassword.style.display = "none";""
     }
     LoginFetch(e.target[0].value, e.target[1].value).then((data) => {
       localStorage.setItem('token', data.token);
@@ -60,9 +61,12 @@ const Login = ({ setLogin }: { setLogin: () => void }) => {
         display: "flex",
         flexDirection: "column",
         gap: "10px",
-        width: "300px",
+        width: "380px",
+        padding:"35px",
         margin: "auto",
-        marginTop: "100px",
+        marginTop: "150px",
+        border:"3px solid grey",
+        borderRadius:"10px"
       }}
     >
       <h1>Login</h1>

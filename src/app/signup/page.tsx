@@ -12,7 +12,7 @@ const SignUpFetch = async (email: string, username: string, password:string, nam
     },
     body: JSON.stringify({
       email:email,
-      username: username,
+      username: username, 
       password: password,
       name:name,
       surname:surname
@@ -75,9 +75,12 @@ export default function SignUp(){
         display: "flex",
         flexDirection: "column",
         gap: "10px",
-        width: "300px",
+        width: "380px",
         margin: "auto",
-        marginTop: "100px"
+        marginTop: "100px",
+        borderRadius:"10px",
+        border:"3px solid grey",
+        padding:"35px"
       }}><h1>SignUp</h1>
         <form
           onSubmit={handleSubmit}

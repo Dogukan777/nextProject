@@ -1,6 +1,7 @@
 
 "use client";
 import { useState, useEffect } from "react";
+import Hider from "@/components/layout/hider";
 interface User {
   name: string;
   email: string;
@@ -21,7 +22,9 @@ const UserFetch = async (id:String): Promise<User[]> => {
   console.log("data",data);
   return data;
 };
+const onBasketUpdate = async () =>{
 
+}
 
 const User = ({params}: { params: { id: string } }) => {
 
@@ -41,6 +44,7 @@ const User = ({params}: { params: { id: string } }) => {
 
     return (
     <main>
+       <Hider onBasketUpdate={onBasketUpdate}/>
       <div style={{ width: "82%", height: "500px", margin: "0 auto", marginTop: "50px" }}>
         {data ? (
           data.map((item, index) => (
